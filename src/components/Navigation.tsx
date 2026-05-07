@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { label: 'About', href: '#about' },
@@ -25,16 +23,16 @@ export default function Navigation() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="container max-w-5xl flex items-center justify-between h-16">
+      <nav className="section-container flex items-center justify-between h-20">
         {/* Logo */}
         <motion.a
           href="#"
-          className="text-xl font-bold text-accent"
+          className="text-2xl font-black gradient-text"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -58,21 +56,6 @@ export default function Navigation() {
 
         {/* Right section */}
         <div className="flex items-center gap-4">
-          {/* Theme toggle */}
-          <motion.button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-muted transition-colors duration-200"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? (
-              <Moon className="w-5 h-5" />
-            ) : (
-              <Sun className="w-5 h-5" />
-            )}
-          </motion.button>
-
           {/* Mobile menu button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}

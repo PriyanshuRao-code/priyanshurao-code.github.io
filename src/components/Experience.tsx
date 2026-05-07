@@ -57,59 +57,46 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 md:py-32 relative">
+    <section id="experience" className="py-14 md:py-20 relative">
       {/* Background accent */}
       <div className="absolute left-0 -bottom-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10" />
-      
+
       <motion.div
-        className="container max-w-5xl"
+        className="section-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         {/* Section header */}
         <motion.div variants={itemVariants} className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="accent-line" />
-            <span className="text-sm font-medium text-accent uppercase tracking-widest">
-              Experience
-            </span>
+            <span className="text-sm font-medium text-accent uppercase tracking-widest">Experience</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Research & Work
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Research & Work</h2>
         </motion.div>
 
         {/* Timeline */}
-        <motion.div
-          variants={containerVariants}
-          className="space-y-8"
-        >
+        <motion.div variants={containerVariants} className="space-y-8">
           {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              variants={itemVariants}
-              className="relative"
-            >
+            <motion.div key={exp.id} variants={itemVariants} className="relative">
               {/* Timeline connector */}
               {index < experiences.length - 1 && (
-                <div className="absolute left-0 top-20 w-0.5 h-32 bg-gradient-to-b from-accent to-accent/20 md:left-6" />
+                <div className="absolute left-0 top-20 w-0.5 h-32 bg-gradient-to-b from-accent via-purple-400 to-transparent md:left-6" />
               )}
 
               {/* Timeline dot */}
               <div className="absolute left-0 top-6 w-3 h-3 bg-accent rounded-full md:left-3 md:top-8" />
 
               {/* Content */}
-              <div className="ml-8 md:ml-20 card-minimal p-6">
+              <div className="ml-8 md:ml-20 glass-card p-8">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold">{exp.title}</h3>
                     <p className="text-accent font-medium">{exp.organization}</p>
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground mt-2 md:mt-0">
-                    {exp.period}
-                  </span>
+                  <span className="text-sm font-medium text-muted-foreground mt-2 md:mt-0">{exp.period}</span>
                 </div>
 
                 {/* Description */}
@@ -125,10 +112,7 @@ export default function Experience() {
                 {/* Focus areas */}
                 <div className="flex flex-wrap gap-2">
                   {exp.focus.map((area, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full"
-                    >
+                    <span key={idx} className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
                       {area}
                     </span>
                   ))}

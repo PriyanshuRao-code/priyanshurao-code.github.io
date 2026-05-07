@@ -43,12 +43,12 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-32 relative">
+    <section id="contact" >
       {/* Background accent */}
       <div className="absolute left-0 top-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 -translate-y-1/2" />
       
       <motion.div
-        className="container max-w-5xl"
+        className="section-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -86,7 +86,7 @@ export default function Contact() {
                 target={link.href.startsWith('mailto:') ? undefined : '_blank'}
                 rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 variants={itemVariants}
-                className="card-minimal p-6 hover:shadow-lg hover:border-accent transition-all duration-300 group cursor-pointer"
+                className="glass-card p-8 group cursor-pointer"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
@@ -105,8 +105,8 @@ export default function Contact() {
         {/* CTA */}
         <motion.div variants={itemVariants} className="text-center">
           <a
-            href="mailto:priyanshu@example.com"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity duration-200 group"
+            href="mailto:priyanshurao108@gmail.com"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-2xl font-semibold hover:scale-105 hover:shadow-2xl hover:shadow-accent/30 transition-all duration-300 group"
           >
             Send me an Email
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

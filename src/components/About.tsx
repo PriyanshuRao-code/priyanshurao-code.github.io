@@ -39,61 +39,47 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 relative">
+    <section id="about" className="py-14 md:py-20 relative">
       {/* Background accent */}
       <div className="absolute left-0 top-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 -translate-y-1/2" />
-      
+
       <motion.div
-        className="container max-w-5xl"
+        className="section-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         {/* Section header */}
         <motion.div variants={itemVariants} className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="accent-line" />
-            <span className="text-sm font-medium text-accent uppercase tracking-widest">
-              About Me
-            </span>
+            <span className="text-sm font-medium text-accent uppercase tracking-widest">About Me</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Passionate about AI/ML and Real-World Impact
+          <h2 className="section-title mb-6">
+            Passionate about <span className="text-accent">AI/ML</span>
+            and Real-World Impact
           </h2>
           <p className="text-lg text-foreground/70 max-w-3xl leading-relaxed">
-            I'm a B.Tech Computer Science student at IIT Dharwad specializing in Artificial Intelligence 
-            and Deep Learning. My research focuses on multimodal AI systems, efficient inference optimization, 
-            and building scalable intelligent solutions that solve real-world problems.
+            I'm a B.Tech Computer Science student at IIT Dharwad specializing in Artificial Intelligence and Deep
+            Learning. My research focuses on multimodal AI systems, efficient inference optimization, and building
+            scalable intelligent solutions that solve real-world problems.
           </p>
         </motion.div>
 
         {/* Highlights grid */}
-        <motion.div
-          variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8 mb-12"
-        >
+        <motion.div variants={containerVariants} className="grid md:grid-cols-3 gap-8 mb-12">
           {highlights.map((highlight, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="card-minimal p-6"
-            >
-              <div className="text-sm font-medium text-accent uppercase tracking-widest mb-2">
-                {highlight.label}
-              </div>
-              <div className="text-3xl font-bold mb-2">
-                {highlight.value}
-              </div>
-              <p className="text-sm text-foreground/60">
-                {highlight.description}
-              </p>
+            <motion.div key={index} variants={itemVariants} className="glass-card p-8">
+              <div className="text-sm font-medium text-accent uppercase tracking-widest mb-2">{highlight.label}</div>
+              <div className="text-3xl font-bold mb-2">{highlight.value}</div>
+              <p className="text-sm text-foreground/60">{highlight.description}</p>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Research areas */}
-        <motion.div variants={itemVariants} className="card-minimal p-8">
+        <motion.div variants={itemVariants} className="glass-card p-10">
           <h3 className="text-2xl font-bold mb-6">Research Interests</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>

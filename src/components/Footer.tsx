@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="border-t border-border py-12 md:py-16 relative"
+      className="border-t border-white/10 bg-background/40 backdrop-blur-xl py-12 md:py-16 relative"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -36,7 +36,7 @@ export default function Footer() {
       {/* Background accent */}
       <div className="absolute left-0 -bottom-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10" />
 
-      <div className="container max-w-5xl">
+      <div className="section-container">
         <motion.div className="grid md:grid-cols-3 gap-8 mb-8" variants={containerVariants}>
           {/* About */}
           <motion.div variants={itemVariants}>
@@ -107,7 +107,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Divider */}
-        <motion.div variants={itemVariants} className="border-t border-border my-8" />
+        <motion.div variants={itemVariants} className="border-t border-white/10 bg-background/40 backdrop-blur-xl my-8" />
 
         {/* Bottom section */}
         <motion.div

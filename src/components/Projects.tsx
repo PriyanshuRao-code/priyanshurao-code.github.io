@@ -72,8 +72,8 @@ const projects: Project[] = [
     ],
     tags: ["Machine Learning", "Ensemble Methods", "Streamlit", "Data Science"],
     links: {
-      github: "https://github.com/PriyanshuRao-code/AI-Lab-Project.git",
-      demo: "https://ai-dashboard-team-24.streamlit.app/",
+      github: "https://github.com/PriyanshuRao-code/AI-Lab-Project.git"
+      // , demo: "https://ai-dashboard-team-24.streamlit.app/",
     },
   },
 ];
@@ -99,12 +99,12 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 relative">
+    <section id="projects" className="py-14 md:py-20 relative">
       {/* Background accent */}
       <div className="absolute right-0 top-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 -translate-y-1/2" />
       
       <motion.div
-        className="container max-w-5xl"
+        className="section-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -128,19 +128,16 @@ export default function Projects() {
           variants={containerVariants}
           className="space-y-8"
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="card-minimal p-8 hover:shadow-lg transition-shadow duration-300"
-              style={{
-                marginLeft: index % 2 === 1 ? '2rem' : '0',
-              }}
+              className="glass-card p-8 lg:p-10 group"
             >
               {/* Project header */}
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-accent transition-colors duration-300">{project.title}</h3>
                   <p className="text-foreground/70 text-lg">
                     {project.description}
                   </p>
@@ -177,7 +174,7 @@ export default function Projects() {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full"
+                      className="px-4 py-2 bg-accent/10 border border-accent/20 text-accent text-sm font-medium rounded-full backdrop-blur-md"
                     >
                       {tag}
                     </span>
@@ -200,7 +197,7 @@ export default function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:opacity-90 transition-opacity duration-200"
+                      className="flex items-center gap-2 px-5 py-3 bg-accent text-white rounded-xl hover:scale-105 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span className="text-sm font-medium">Demo</span>

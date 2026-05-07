@@ -54,12 +54,12 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-32 relative">
+    <section id="skills" className="py-14 md:py-20 relative">
       {/* Background accent */}
       <div className="absolute right-0 top-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 -translate-y-1/2" />
       
       <motion.div
-        className="container max-w-5xl"
+        className="section-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -87,7 +87,7 @@ export default function Skills() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="card-minimal p-6"
+              className="glass-card p-8"
             >
               <h3 className="text-lg font-bold mb-4 text-accent">
                 {category.category}
@@ -100,7 +100,7 @@ export default function Skills() {
                   <motion.div
                     key={skillIndex}
                     variants={skillVariants}
-                    className="px-4 py-2 bg-accent/10 text-accent rounded-lg font-medium text-sm hover:bg-accent/20 transition-colors duration-200 cursor-default"
+                    className="px-4 py-2 bg-accent/10 border border-accent/20 text-accent rounded-xl font-medium text-sm hover:bg-accent/20 hover:scale-105 transition-all duration-300 cursor-default backdrop-blur-md"
                   >
                     {skill}
                   </motion.div>
