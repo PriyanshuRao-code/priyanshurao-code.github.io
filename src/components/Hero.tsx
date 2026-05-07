@@ -32,7 +32,7 @@ const itemVariants: Variants = {
   },
 };
   return (
-    <section className="relative min-h-screen w-full flex items-center px-6 md:px-10 lg:px-16">
+    <section className="relative min-h-screen w-full flex items-center pt-20 px-6 md:px-10 lg:px-16">
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
