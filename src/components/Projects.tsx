@@ -26,7 +26,7 @@ const projects: Project[] = [
       "Optimized for both accuracy and inference efficiency",
     ],
     metrics: [
-      { label: "Accuracy Improvement", value: "+3.6%" },
+      { label: "Accuracy Improvement", value: "+0.56%" },
       { label: "Model Fusion", value: "ViLT + LXMERT" },
       { label: "Task", value: "VQA v2.0" },
     ],
